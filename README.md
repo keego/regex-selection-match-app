@@ -1,3 +1,5 @@
 # regex-selection-match-app
 
-simple React app to test out regex selection matching
+Simple React app to test out regex selection matching
+
+Check out the [live demo](http://text-highlighter.infinityfreeapp.com)
