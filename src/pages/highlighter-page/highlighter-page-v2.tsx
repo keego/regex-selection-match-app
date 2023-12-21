@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 
-import { TextBox } from "../../components/text-box";
+import { TextBox, TextBoxV2 } from "../../components/text-box";
 import { Button } from "../../components/button";
 import { useRandomWords } from "../../modules/generation";
 
@@ -31,9 +31,9 @@ const styles = {
   }
 }
 
-export interface HighlighterPageV1Props {}
+export interface HighlighterPageV2Props {}
 
-export function HighlighterPageV1({}: HighlighterPageV1Props) {
+export function HighlighterPageV2({}: HighlighterPageV2Props) {
   const { words } = useRandomWords({ count: { average: 30 } })
   const [highlightedText, setHighlightedText] = useState<string | undefined>(undefined)
   const [isSelecting, setIsSelecting] = useState(false)
@@ -55,7 +55,7 @@ export function HighlighterPageV1({}: HighlighterPageV1Props) {
 
   return (
     <div style={styles.container}>
-      <TextBox style={styles.box} text={baseText} onSelect={onSelect} />
+      <TextBoxV2 style={styles.box} text={baseText} highlightString={highlightedText} onSelect={onSelect} />
       <div style={styles.text}>Highlight some text above</div>
       <div style={styles.row}>
         <Button style={styles.button} disabled={isSelecting} onClick={onStart}>
@@ -66,7 +66,6 @@ export function HighlighterPageV1({}: HighlighterPageV1Props) {
         </Button>
       </div>
       <div style={styles.text}>Selection highlighted below</div>
-      <TextBox style={styles.box} text={baseText} highlightString={highlightedText} />
       <TextBox style={styles.box} text={highlightedText ?? ''} />
     </div>
   )
