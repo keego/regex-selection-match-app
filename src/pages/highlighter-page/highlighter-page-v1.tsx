@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useState } from "react";
 
-import { TextBox } from "../../components/text-box";
-import { Button } from "../../components/button";
-import { useRandomWords } from "../../modules/generation";
+import { TextBox } from "~components/text-box";
+import { Button } from "~components/button";
+import { useRandomWords } from "~modules/generation";
 
 const styles = {
   container: {

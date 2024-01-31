@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 
-import { useSelection } from "../../hooks/use-selection"
+import { useSelection } from "~modules/interaction"
 
 
 const styles = {

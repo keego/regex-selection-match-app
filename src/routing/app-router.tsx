@@ -1,6 +1,8 @@
 import { Navigate, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+
+import { HighlighterPageV1, HighlighterPageV2 } from '~pages/highlighter-page'
+
 import { routes } from './routes'
-import { HighlighterPageV1, HighlighterPageV2 } from '../pages/highlighter-page'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
