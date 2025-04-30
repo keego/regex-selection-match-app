@@ -2,4 +2,4 @@
 
 Simple React app to test out regex selection matching
 
-Check out the [live demo](http://text-highlighter.infinityfreeapp.com)
+Check out the [live demo](http://www.text-highlighter.infinityfreeapp.com)
