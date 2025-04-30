@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 import { TextBox, TextBoxV2 } from "~components/text-box";
 import { Button } from "~components/button";
 import { useRandomWords } from "~modules/generation";
+import { PageLayout } from "~layouts/page-layout";
 
 const styles = {
   container: {
@@ -54,19 +55,21 @@ export function HighlighterPageV2({}: HighlighterPageV2Props) {
   const baseText = useMemo(() => words.join(' '), [words])
 
   return (
-    <div style={styles.container}>
-      <TextBoxV2 style={styles.box} text={baseText} highlightString={highlightedText} onSelect={onSelect} />
-      <div style={styles.text}>Highlight some text above</div>
-      <div style={styles.row}>
-        <Button style={styles.button} disabled={isSelecting} onClick={onStart}>
-          Start
-        </Button>
-        <Button style={styles.button} disabled={!isSelecting} onClick={onStop}>
-          Stop
-        </Button>
+    <PageLayout>
+      <div style={styles.container}>
+        <TextBoxV2 style={styles.box} text={baseText} highlightString={highlightedText} onSelect={onSelect} />
+        <div style={styles.text}>Highlight some text above</div>
+        <div style={styles.row}>
+          <Button style={styles.button} disabled={isSelecting} onClick={onStart}>
+            Start
+          </Button>
+          <Button style={styles.button} disabled={!isSelecting} onClick={onStop}>
+            Stop
+          </Button>
+        </div>
+        <div style={styles.text}>Selection highlighted below</div>
+        <TextBox style={styles.box} text={highlightedText ?? ''} />
       </div>
-      <div style={styles.text}>Selection highlighted below</div>
-      <TextBox style={styles.box} text={highlightedText ?? ''} />
-    </div>
+    </PageLayout>
   )
 }

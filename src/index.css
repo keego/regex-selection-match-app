@@ -22,3 +22,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a.internal {
+  color: cornflowerblue
+}
+
+a.internal:hover {
+  color: white
+}
